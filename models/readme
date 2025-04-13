@@ -1,0 +1,11 @@
+## LLaMA 2 Model File
+
+Due to GitHub’s file size restrictions, the model binary file is not included in this repository.
+
+You can download the required model file from the link below:
+
+👉 [Download LLaMA 2 7B Chat Model (.bin)](https://huggingface.co/atharvapawar/llama-2-7b-chat.ggmlv3.q8_0/blob/main/llama-2-7b-chat.ggmlv3.q8_0.bin)
+
+### 📁 After downloading:
+Place the file in the following directory on your machine:
+
