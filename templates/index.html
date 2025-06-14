@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Blog Generator</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Spinner animation */
+    .spinner {
+      display: none;
+      margin: 20px auto;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #00f7ff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 AI Blog Generator 🧠</h1>
+    
+    <form method="POST" onsubmit="showSpinner()">
+      <input type="text" name="topic" placeholder="Enter blog topic" required>
+      <input type="number" name="word_count" placeholder="Number of words" required>
+      
+      <select name="style">
+        <option value="researcher">Researcher</option>
+        <option value="data analyst">Data Analyst</option>
+        <option value="common people">Common People</option>
+      </select>
+      
+      <button type="submit">Generate Blog</button>
+      <div class="spinner" id="loadingSpinner"></div>
+    </form>
+
+    {% if blog %}
+      <h2>📝 Generated Blog:</h2>
+      <pre>{{ blog }}</pre>
+      <a href="/download"><button>📄 Download as PDF</button></a>
+    {% endif %}
+  </div>
+
+  <script>
+    function showSpinner() {
+      document.getElementById("loadingSpinner").style.display = "block";
+    }
+  </script>
+</body>
+</html>
