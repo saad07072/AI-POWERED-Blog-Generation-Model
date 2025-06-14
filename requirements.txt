@@ -5,3 +5,7 @@ langchain
 python-box
 streamlit
 langchain-community
+Flask
+requests
+fpdf
+gunicorn
